@@ -84,9 +84,11 @@ for player in ivalues(Players) do
 end
 
 -- -----------------------------------------------------------------------
--- Then load the Panes.
+
+-- Then load Panes and score vocalization stuff.
 
 t[#t+1] = LoadActor("./Panes/default.lua", NumPanes)
+t[#t+1] = LoadActor("./ScoreVocalization.lua")
 
 -- -----------------------------------------------------------------------
 
