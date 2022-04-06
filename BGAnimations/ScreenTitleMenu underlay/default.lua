@@ -35,6 +35,17 @@ af2.Name="SLInfo"
 -- and the arrows graphic that appears between the two words
 af2[#af2+1] = LoadActor("./Logo.lua")
 
+-- outfox mascot
+af2[#af2+1] = Def.Sprite{
+	Texture=THEME:GetPathB("ScreenTitleMenu", "underlay/mascot.png"),
+	InitCommand=function(self)
+		self:xy(-self:GetWidth()/2, 0):zoom(0.50):queuecommand("Slide")
+	end,
+	SlideCommand=function(self)
+		self:decelerate(0.7):x(self:GetX() - 50)
+	end,
+}
+
 -- 3 lines of text:
 --    theme_name   theme_version
 --    stepmania_version
