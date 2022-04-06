@@ -136,7 +136,7 @@ return Def.ActorFrame{
 			-- here, we are padding the scroller_data table with dummy scroller items to accommodate
 			-- the peculiar scroller behavior of starting low, starting on item#2, not wrapping, etc.
 			-- see also: https://youtu.be/bXZhTb0eUqA?t=116
-			local scroller_data = {{}, {}, {}, guest_profile}
+			local scroller_data = {{}, {}, {}, {}, guest_profile}
 
 			-- add actual profile data into the scroller_data table
 			for profile in ivalues(profile_data) do
@@ -164,7 +164,7 @@ return Def.ActorFrame{
 			InitCommand=function(self)
 				self:x(15.5)
 			end,
-			OnCommand=function(self) self:playcommand("Set", profile_data[1]) end,
+			OnCommand=function(self) self:playcommand("Set", nil) end,
 
 			-- semi-transparent Quad to the right of this colored frame to present profile stats and mods
 			Def.Quad {
